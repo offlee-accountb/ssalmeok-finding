@@ -1,117 +1,108 @@
-# 🤖 OpenClaw 작업 브리프 — AI 사이드 프로젝트 아이디어 탐색
+# 🤖 OpenClaw 작업 브리프 — AI 사이드 프로젝트 사업 아이디어 탐색
 
-> 이 문서는 텔레그램 OpenClaw에게 보낼 작업 지시 및 컨텍스트를 정리한 것입니다.
-> 작성일: 2026-02-19
-
----
-
-## 📋 현재까지의 진행 상황 (Context)
-
-### 프로젝트 목표
-한국 시장에서 1인 개발자가 만들어 수익화할 수 있는 AI 사이드 프로젝트를 찾고 있다.
-핵심 기준: **구조적 접근성** (데이터 접근이 합법적이고 안정적인가?), **시장성**, **수익화 가능성**
-
-### 스크리닝 완료 목록 (7개)
-
-| 아이디어 | 등급 | 사유 |
-|---------|:---:|------|
-| SecureLocalAI KR | **B** | 9B/4B 로컬 AI 보안 지식 허브. 구조적 접근성 완벽. 보안 프로그램 호환 등 런칭 허들 존재 |
-| AutoApplier KR | C | 채용 자동 지원. 시장 경쟁 및 규모의 경제 문제 |
-| Nuanso KR | C | AI 광고 인사이트. 카카오 API 접근 제한 |
-| Termsy KR | C | 약관 분석. 접근성은 좋지만 수익화 불명확 |
-| PenguinBot KR | C | 범용 AI 봇. 경쟁이 넘사벽 |
-| Toolspend KR | D | AI/SaaS 지출 관리. 마이데이터 규제 벽 |
-| Polywallets KR | F | 예측시장. 한국에서 규제상 불가 |
-
-### SecureLocalAI KR (B등급) 핵심 기술 결론
-- **모델:** Qwen 3.5 4B 또는 Phi-4 mini (3.8B)을 4-bit 양자화 → 약 2~2.5GB
-- **프레임워크:** Tauri + Rust (보안 프로그램 오진 최소화)
-- **타겟:** GPU 없는 사무용 PC (DDR5 16GB RAM)에서 동작
-- **차별화:** 클라우드 AI가 못 하는 "로컬 파일 직접 핸들링"
-
-### 추가 탐색 중인 아이디어 후보 (미스크리닝)
-
-1. **"Cursor for 한국 전문직"** — 변호사/세무사용 로컬 AI 코파일럿
-2. **AI 파일 정리앱** — 로컬 LLM 기반 시맨틱 파일 분류
-3. **RamAIn형 레거시 자동화** — 한국 대기업 구식 사내 시스템 자동화
-4. **AI Automation Pipeline 판매** — 특정 업무 자동화를 월정액으로 판매
-5. **Me.bot형 Second Brain** — 개인 지식 관리 로컬 AI
-6. **EigenPal형 문서 처리 자동화** — 공공기관/기업 문서 워크플로우
-7. **AI 보이스오버 팩** — 1인 미디어용 AI 음성 클로닝
-8. **Klu형 내부 검색 엔진** — 사내 기밀 문서 로컬 통합 검색
+> OpenClaw(메시) 작업 지시.
+> 최종 수정: 2026-03-01
 
 ---
 
-## 🎯 OpenClaw에게 시킬 작업
+## 📋 목표
 
-### 작업 1: 아이디어 사냥 (리서치)
+**"1인 개발자가 AI를 활용해서 월 300만원 이상 벌 수 있는 제품을 찾자."**
 
-아래 사이트들을 주기적으로 확인하면서, 다음 기준에 맞는 AI 제품/서비스를 찾아서 알려줘:
+조건:
+- 한국 시장에서 팔 수 있는 것
+- 혼자 만들고 혼자 운영 가능한 것
+- AI는 수단이고, 로컬이든 API든 상관없음
+- 실제 결제하는 고객이 존재하는 증거가 있는 것
 
-**탐색 사이트:**
-- Product Hunt: https://www.producthunt.com (AI 카테고리)
-- YC Launches: https://www.ycombinator.com/launches
-- 디스콰이엇: https://disquiet.io/products
-- r/microsaas: https://reddit.com/r/microsaas
-- r/SideProject: https://reddit.com/r/SideProject
-- Indie Hackers: https://indiehackers.com
-- Microns.io: https://microns.io
+---
 
-**필터 기준:**
-- ✅ 1인 또는 소규모 팀이 만든 것
-- ✅ AI/LLM 기반 도구
-- ✅ 외부 API 의존 없이 로컬 데이터로 동작 가능한 것 (우선순위 높음)
-- ✅ 실제 매출이 발생하고 있는 것
-- ✅ 한국 시장에 적용 가능성이 있는 것
-- ❌ GPU 클러스터가 필요한 인프라 사업은 제외
-- ❌ 이미 네이버/카카오가 하고 있는 범용 AI는 제외
+## 🎯 작업 1: 돈 버는 AI 제품 사냥 (핵심)
 
-**출력 형식:**
-각 발견 건마다 아래 형식으로 보고:
+### 어디서 찾나
+
+아래 사이트에서 **새로 런칭하는 AI 제품, 베타 테스트 중인 제품, 매출 공개한 인디 제품**을 찾아:
+
+| 사이트 | URL | 뭘 봐야 하나 |
+|--------|-----|-------------|
+| Product Hunt | https://www.producthunt.com | AI 카테고리 신규 런칭 |
+| YC Launches | https://www.ycombinator.com/launches | 초기 스타트업 아이디어 |
+| 디스콰이엇 | https://disquiet.io/products | 한국 인디 제품 |
+| r/microsaas | https://reddit.com/r/microsaas | 매출 인증 + 빌딩 로그 |
+| r/SideProject | https://reddit.com/r/SideProject | 사이드 프로젝트 런칭 |
+| Indie Hackers | https://indiehackers.com | 매출 공개 인디 사례 |
+| Microns.io | https://microns.io | 소규모 인수/매각 사례 |
+| BetaList | https://betalist.com | 베타 테스트 제품 |
+
+### 뭘 찾나
+
+- ✅ **1인 또는 2~3인이 만든 AI 제품** 중 실제로 돈을 벌고 있는 것
+- ✅ 가격 모델이 명확한 것 (월정액, 건당 과금, 일회성 등)
+- ✅ 한국에도 같은 수요가 있을 만한 것
+- ✅ 기술적으로 나 혼자 3개월 안에 MVP 만들 수 있는 것
+- ❌ GPU 클러스터 필요한 인프라 사업
+- ❌ 이미 네이버/카카오가 하고 있는 범용 AI
+- ❌ 대량 유저 없으면 수익 불가 (규모의 경제)
+- ❌ 매출/가격 정보가 전혀 없는 초기 오픈소스 프로젝트
+- ❌ 한국 금융/의료/도박 규제에 걸리는 것
+
+### 보고 형식
+
 ```
 이름: [제품명]
 URL: [링크]
-한 줄 요약: [뭘 하는 건지]
-구조적 접근성: ✅/🟡/🔴
-한국 적용 가능성: 높음/중간/낮음
+한 줄 요약: [뭘 하는 건지 — "누구"의 "무슨 문제"를 풀어주는가]
+💰 가격/매출: [가격 모델 + 알려진 매출이 있으면 기재]
+👤 타겟 고객: [누가 돈 내고 사는지]
+🔧 1인 실현 가능성: 높음/중간/낮음 + 이유
+🇰🇷 한국 적용 가능성: 높음/중간/낮음 + 이유
 비고: [특이사항]
+간단 소감: [그래서 이거에서 뭘 배울 수 있나? 한국에서 어떻게 변형하면 되나?]
 ```
 
-### 작업 2: 경쟁사 모니터링
+### 핵심 질문 (매번 이걸 자문해)
 
-아래 키워드로 주기적으로 검색해서, 새로운 로컬 AI 도구나 경쟁 제품이 나타나면 알려줘:
-- "local AI file manager"
-- "로컬 AI 파일 정리"
-- "on-device LLM tool"
-- "Tauri AI application"
-- "privacy-first AI assistant"
+1. **누가 돈을 내나?** (결제하는 사람이 누군지 모르면 보고하지 마)
+2. **왜 돈을 내나?** (시간 절약? 돈 절약? 불가능한 걸 가능하게?)
+3. **나 혼자 만들 수 있나?**
+4. **한국에도 같은 문제가 있나?**
 
-### 작업 3: 기술 동향 추적
+---
 
-아래 모델/프레임워크의 새 릴리즈나 벤치마크 결과가 나오면 알려줘:
-- Qwen 3.5 시리즈 (특히 4B, 9B)
-- Phi-4 mini / Phi-4 multimodal
-- llama.cpp 업데이트
-- Tauri 2.x 업데이트
-- Ollama 업데이트
+## 🎯 작업 2: 경쟁 모니터링
+
+아래 키워드로 **새로운 AI 제품이 등장하면** 보고:
+- "AI micro-SaaS revenue"
+- "solo developer AI product"
+- "AI automation tool launch"
+- "1인 AI 제품 매출"
+- "AI SaaS 월매출"
+
+기존에 발견한 직접 경쟁자 업데이트도 추적:
+- **Filer** (filer-ai.com)
+- **Stuard AI** (stuard.ai)
+
+---
+
+## ⛔ 하지 말 것
+
+1. **기술 스택 추적 하지 마** — llama.cpp, Ollama, Tauri 릴리즈 추적 전부 중단
+2. **일일 summary_memo 만들지 마** — 중요한 건만 텔레그램 즉시 알림
+3. **"로컬이냐 클라우드냐"로 필터링하지 마** — 둘 다 OK
+4. **기술 뉴스/업데이트 파일 만들지 마** — 제품과 무관한 기술 동향 불필요
+5. **중복 제품은 파일 새로 만들지 말고** 기존 파일에 업데이트
 
 ---
 
 ## 📁 결과 저장 규칙
 
-OpenClaw이 찾은 결과는 아래 경로에 md 파일로 저장해줘:
-
 ```
-~/hobbys/ssalmeok finding/
+ssalmeok-finding/
 ├── market_assessment/
-│   ├── scouting/              ← 새 아이디어 발견 시 여기에 저장
-│   │   ├── YYYY-MM-DD_[제품명].md
-│   │   └── ...
-│   ├── B/
-│   │   └── secure_local_ai_kr/
-│   │       └── 1_overview.md  ← 이미 작성됨
-│   └── C/, D/, F/             ← 기존 스크리닝 완료
-├── screening_index.md         ← 전체 인덱스
+│   ├── scouting/              ← 새 발견 건 저장
+│   │   ├── SCOUTING_DIGEST.md ← 다이제스트
+│   │   └── YYYY-MM-DD_[제품명].md
+│   └── ...
 └── openclaw_task_brief.md     ← 이 파일
 ```
 
@@ -162,3 +153,4 @@ OpenClaw이 찾은 결과는 아래 경로에 md 파일로 저장해줘:
 > 상세 내용은 ~/hobbys/ssalmeok finding/market_assessment/scouting/ 에 md 파일로 저장해줘.
 
 ---
+
